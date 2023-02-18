@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars list</title>
+</head>
+
+<body>
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Manufacturer</th>
+        <th>Model</th>
+    </tr>
+    <tr th:each="car, state : ${cars}"
+        class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
+        <td th:utext="${state.count}">Id</td>
+        <td th:utext="${car.getManufacturer()}">Manufacturer</td>
+        <td th:utext="${car.getModel()}">Model</td>
+    </tr>
+</table>
+
+</body>
+</html>
